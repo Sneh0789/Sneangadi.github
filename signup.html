@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=K2D:300,400,500|Kodchasan:400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Neucha" rel="stylesheet">
+
+	<style type="text/css">
+		*{
+		box-sizing: border-box;
+		margin: 0;
+		padding:0;
+		}
+		body{
+		background-image: url("img/bg.jpg");
+		background-position: center;
+    	background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<ul class="topnav">
+		  <li><a href="index.html" style="margin-left: 100px"><img src="img/A2logo.png" width="100px" height="auto"></a></li>
+
+		  <li class="right" style="margin-right: 100px;margin-top: 15px;"><a href="login.html">LOGIN</a></li>
+		  <li class="right" style="margin-top: 15px;"><a href="signup.html">SIGN UP</a></li>
+		</ul>
+	</header>
+
+	<div class="form" style="padding-top: 10%;">
+	<center>
+		<div class="form-content">
+			<div style="width: 80%;">
+				<img src="img/login.png" width="200px" height="auto">
+				<h2 style="color: white">SIGN UP</h2>
+				<form>
+					<input type="text" name="" placeholder="Your Name" id="name"><br>
+					<input type="email" name="" placeholder="Your Email" id="email"><br>
+					<input type="text" name="" placeholder="Username" id="username"><br>
+					<input type="password" name="" placeholder="Password" id="pass"><br>
+					<input type="password" name="" placeholder="Confirm Password" id="cpass"><br>
+					<a href="" class="button" id="signup"> SIGNUP</a><br>
+				</form>
+
+			</div>
+		</div>
+	</center>
+	</div>
+
+	<div class="footer">
+		<center>
+				Copyright &copy A2 Bus Services. All Rights Reserved | Contact Us: +91 9003829840
+		</center>
+	</div>
+
+	
+	<script type="text/javascript">
+	   
+		
+		 
+		var values= new Array(5);
+			  
+	document.getElementById("signup").onclick=function(){
+		var uname = /^[0-9a-zA-Z]+$/;
+		var letters = /^[A-Za-z]+$/;
+		var count=0;
+		var errormessage="";
+		var fieldsMissing = "";
+
+		values[0]=document.getElementById("name").value;
+		values[1]=document.getElementById("email").value;
+		values[2]=document.getElementById("username").value;
+		values[3]=document.getElementById("pass").value;
+		values[4]=document.getElementById("cpass").value;
+
+		if(values[0]=="")
+		 { 
+			fieldsMissing += "\n      NAME";
+		 }
+		 if(values[1]=="")
+		 { 
+			fieldsMissing += "\n      EMAIL";
+		 }
+		 if(values[2]=="")
+		 { 
+			fieldsMissing += "\n      USERNAME";
+		 }
+		 if(values[3]=="")
+		 { 
+			fieldsMissing += "\n      PASSWORD";
+		 }
+		 if(values[4]=="")
+		 { 
+			fieldsMissing += "\n      CONFIRM PASSWORD";
+		 }
+
+
+		if(fieldsMissing!="")
+		 {  
+			alert("    KINDLY FILL THE FOLLOWING FEILD(s)    " + fieldsMissing);
+			count++;
+		 
+		 }
+
+	 	if(values[0]!=""){
+	 		if(values[0].match(letters)){}
+	 		else 
+	   		{
+				errormessage+="\n  NAME Should contain ONLY CHARACTER";
+	   		}
+		}
+
+		if(values[2]!=""){
+			if(values[2].match(uname)){}
+			else
+            {     
+				errormessage+="\n USERNAME should contain only CHARACTERS AND NUMBERS"; 
+			}
+		}
+		
+		if(values[3]!=values[4]){
+				errormessage+="\n PASSWORDS AND CONFIRM PASSWORD does not match !!!! ";
+		}
+		
+		if (errormessage !="") {
+			alert("    FOLLOWING INPUT IS WRONG"+ errormessage); 
+		}
+    	if (errormessage=="" && count==0){
+			alert("      \tTHANKS FOR REGISTERING!!");
+			document.getElementById("signup").href="login.html";
+   		}
+	              
+}
+</script>
+
+</body>
+</html>

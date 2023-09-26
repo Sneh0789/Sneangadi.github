@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Your Tickets</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=K2D:300,400,500|Kodchasan:400,500" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Neucha" rel="stylesheet">
+
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+		margin: 0;
+		padding:0;
+	}
+	body{
+		background-image: url("img/bg.jpg");
+		background-position: center;
+    	background-size: cover;
+		}
+</style>
+
+</head>
+<body>
+	<header>
+		<ul class="topnav">
+		  <li><a href="index.html"><img src="img/A2logo.png" width="100px" height="auto" style="margin-left: 100px;"></a></li>
+		  <li class="right" style="margin-right: 100px;margin-top: 15px;"><a href="index.html">LOGOUT</a></li>
+		  <li class="right" style="margin-top: 15px;"><a href="contact.html">CONTACT US</a></li>
+		  <li class="right" style="margin-top: 15px;"><a href="book.html">BOOK TICKETS</a></li>
+		  <li class="right" style="margin-top: 15px;"><a href="book.html" id="pop">WELCOME			   
+			<script>
+		  
+		  	</script></a></li>
+		</ul>
+	</header>
+
+	<div class="form" style="padding-top: 8%;padding-bottom:5%;width: 50%">
+	<center>
+		<div class="form-content">
+			<div style="width: 80%;">
+				<img src="img/bus.png" width="100px" height="auto">
+				<h2 style="color: white">Search for a Bus</h2><br>
+				<p style="font-size:20px;color: white">Buses from Vellore to ?</p>
+				<form name="jump">
+				    <select name="menu">
+				    	<option>Select Your Option</option>
+				       <option value="chennai.html">Chennai</option>
+				       <option value="bangalore.html">Bangalore</option>
+				       <option value="pondicherry.html">Pondicherry</option>
+				       <option value="coimbatore.html">Coimbatore</option>
+				       </select><br>
+				       <input type="button" id="button" class="button"
+				       onclick="window.open(document.jump.menu.options[document.jump.menu.selectedIndex].value,'iframe_a');" value="Submit" >
+				</form>
+			</div>
+		</div>
+	</center>
+	</div>
+
+<center><iframe src="" width="90%" height="700px" name="iframe_a" style="border:none;"></iframe></center>
+
+<div class="footer">
+		<center>
+				Copyright &copy A2 Bus Services. All Rights Reserved | Contact Us: +91 9003829840
+		</center>
+</div>
+
+

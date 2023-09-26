@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Confirm Booking</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=K2D:300,400,500|Kodchasan:400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Neucha" rel="stylesheet">
+
+	<style type="text/css">
+		*{
+		box-sizing: border-box;
+		margin: 0;
+		padding:0;
+		}
+		body{
+		background-image: url("img/bg.jpg");
+		background-position: center;
+    	background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<ul class="topnav">
+		  <li><a href="index.html"><img src="img/A2logo.png" width="100px" height="auto" style="margin-left: 100px;"></a></li>
+		  <li class="right" style="margin-right: 100px;margin-top: 15px;"><a href="index.html">LOGOUT</a></li>
+		  <li class="right" style="margin-top: 15px;"><a href="contact.html">CONTACT US</a></li>
+		  <li class="right" style="margin-top: 15px;"><a href="book.html">BOOK TICKETS</a></li>
+		</ul>
+	</header>
+
+	<div class="form" style="padding-top: 10%;">
+	<center>
+		<div class="form-content">
+			<div style="width: 90%;">
+				<h2 style="color: white">CONFIRM YOUR BOOKING</h2><br>
+				<form>
+					<input type="text" name="" placeholder="Passenger Name" id="pn"><br>
+
+					<input type="text" name="" placeholder="Your Age" id="age"><br>
+					
+					<p style="color:white;font-size:18px;text-align:left;width: 80%;padding: 10px 0; font-family: 'K2D', sans-serif;">Gender:
+					&nbsp&nbsp&nbsp
+					<input type="radio" name="gender" required>&nbspMale
+					<input type="radio" name="gender" required>&nbspFemale</p>
+
+					<input type="phone" name="" placeholder="Your contact number" id="phno"><br>
+
+					<p style="color:white;font-size:18px;text-align:left;width: 80%;padding-top:10px; font-family: 'K2D', sans-serif;">Departure date:</p>
+					<input type="date" name="" value="Departure Date"><br>
+
+					<select>
+						<option>Seat preference</option>
+				    	<option>Window</option>
+				      	<option value="chennai.html">Aisle</option>
+				    </select><br>
+
+				    <input type="checkbox" name="" required><span style="color:white;font-size:18px;text-align:left;width: 80%;padding-left:10px; font-family: 'K2D', sans-serif;">I agree to all terms and conditions.</span><br>
+					<a href="" class="button" id="confirm">CONFIRM</a>
+				</form>
+
+			</div>
+		</div>
+	</center>
+	</div>
+
+	<div class="footer">
+		<center>
+				Copyright &copy A2 Bus Services. All Rights Reserved | Contact Us: +91 9003829840
+		</center>
+	</div>
+
+	<script type="text/javascript">
+
+		var values= new Array(3);
+
+		document.getElementById("confirm").onclick=function(){
+			var errormessage="";
+			var fieldsMissing = "";
+			var count=0;
+		
+			var letters = /^[A-Za-z]+$/;
+			var phoneno = /^\d{10}$/;
+			
+			values[0]=document.getElementById("pn").value;
+			values[1]=document.getElementById("age").value;
+			values[2]=document.getElementById("phno").value;
+
+        if(values[0]=="")
+		 { 
+			fieldsMissing += "\n    AGE";
+		 }
+		 if(values[1]=="")
+		 { 
+			fieldsMissing += "\n    EMAIL";
+		 }
+		 if(values[2]=="")
+		 { 
+			fieldsMissing += "\n    PHONE NO";
+		 }
+
+		if(fieldsMissing!="")
+		 {  
+			   alert("    KINDLY FILL THE FOLLOWING FEILD(s)    " + fieldsMissing);
+			   count++;    
+		 } 
+
+		if(values[0]!="")
+		{    
+			if(values[0].match(letters)){}
+
+			else
+			 {
+				errormessage+="\n  NAME Should contain ONLY CHARACTER";
+				
+			 }
+		}
+	    if(values[2]!=""){
+			if(values[2].match(phoneno)){}
+		else 
+		{
+			errormessage+="\n  PHONE NO IS WRONG";
+		}
+		}
+
+		if(values[1]!=""){
+			if (isNaN(values[1])||values[1]<1||values[1]>100)
+			{
+				errormessage+="\n  AGE SHOULD BE BETWEEN 1 AND 100";
+			}
+		}
+
+	if (errormessage !="") {
+		alert("    FOLLOWING INPUT IS WRONG"+ errormessage); 
+	}
+
+    if (errormessage=="" && count==0)
+	{
+		alert("        YOUR BOOKING HAS BEEN DONE!!! ");
+		document.getElementById("confirm").href="book.html";
+		
+	}
+
+}
+</script>
+
+</body>
+</html>
